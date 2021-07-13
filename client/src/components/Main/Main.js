@@ -1,19 +1,26 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import styled from 'styled-components';
 import socket from '../../socket';
 
+
+
 const Main = (props) => {
-  const roomRef = useRef();
-  const userRef = useRef();
+  
   const [err, setErr] = useState(false);
   const [errMsg, setErrMsg] = useState('');
+  
+
+
+
+  
+  
 
   useEffect(() => {
 
     socket.on('FE-error-user-exist', ({ error }) => {
       if (!error) {
-        const roomName = roomRef.current.value;
-        const userName = userRef.current.value;
+        const roomName = props.match.params.roomId;
+        const userName = props.match.params.username;
 
         sessionStorage.setItem('user', userName);
         props.history.push(`/room/${roomName}`);
@@ -22,11 +29,11 @@ const Main = (props) => {
         setErrMsg('User name already exist');
       }
     });
-  }, [props.history]);
+  }, [props]);
 
   function clickJoin() {
-    const roomName = roomRef.current.value;
-    const userName = userRef.current.value;
+    const roomName = props.match.params.roomId;
+    const userName = props.match.params.username;
 
     if (!roomName || !userName) {
       setErr(true);
@@ -39,13 +46,9 @@ const Main = (props) => {
   return (
     <MainContainer>
       <Row>
-        <Label htmlFor="roomName">Room Name</Label>
-        <Input type="text" id="roomName" ref={roomRef} />
+        <h2>Join room?</h2>
       </Row>
-      <Row>
-        <Label htmlFor="userName">User Name</Label>
-        <Input type="text" id="userName" ref={userRef} />
-      </Row>
+      
       <JoinButton onClick={clickJoin}> Join </JoinButton>
       {err ? <Error>{errMsg}</Error> : null}
     </MainContainer>
@@ -65,17 +68,8 @@ const Row = styled.div`
   line-height: 35px;
 `;
 
-const Label = styled.label``;
 
-const Input = styled.input`
-  width: 150px;
-  height: 35px;
-  margin-left: 15px;
-  padding-left: 10px;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-`;
+
 
 const Error = styled.div`
   margin-top: 10px;
@@ -99,5 +93,6 @@ const JoinButton = styled.button`
     cursor: pointer;
   }
 `;
+
 
 export default Main;

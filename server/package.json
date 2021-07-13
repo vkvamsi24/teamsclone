@@ -1,20 +1,28 @@
 {
-  "name": "video-call-server",
+  "name": "server",
   "version": "1.0.0",
-  "description": "video call server",
-  "main": "index.js",
+  "description": "Author: T.S Vamsi Krishna",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
-  "author": "Hyunse Kim",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkvamsi24/server2.git"
+  },
+  "author": "vamsi",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vkvamsi24/server2/issues"
+  },
+  "homepage": "https://github.com/vkvamsi24/server2#readme",
   "dependencies": {
-    "cors": "^2.8.5",
+    "compression": "^1.7.4",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.4",
-    "socket.io": "^2.3.0"
+    "ngrok": "^4.0.1",
+    "sass": "^1.35.2",
+    "socket.io": "^4.1.3"
   }
 }
