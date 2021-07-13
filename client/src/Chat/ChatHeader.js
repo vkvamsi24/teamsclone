@@ -59,7 +59,7 @@ function ChatHeader({
 
 
   const dontwant = () => {
-    window.location = "https://teamsclone.netlify.app";
+    window.location = "http://localhost:3000";
   };
 
   const handleGroupLinkOpen = () => {
@@ -108,7 +108,7 @@ function ChatHeader({
      result += characters.charAt(Math.floor(Math.random() * 
      charactersLength));
    }
-   var meetinglink="https://serverteams.herokuapp.com/join/"+result;
+   var meetinglink="http://localhost:7000/join/"+result;
 
    window.open(meetinglink);
 
@@ -558,7 +558,7 @@ useEffect(() => {
         <span className="lucky-coupon-code"></span>
         
           
-        <CopyToClipboard text={"https://teamsclone.netlify.app/rooms/join/"+roomKey} onCopy={() => {
+        <CopyToClipboard text={"http://localhost:3000/rooms/join/"+roomKey} onCopy={() => {
 
 setCopied(true);
 setTimeout(function() {
@@ -569,7 +569,7 @@ setTimeout(function() {
  
  
  }>
- <p className="copy-code">{"https://teamsclone.netlify.app/rooms/join/..."}</p>
+ <p className="copy-code">{"http://localhost:3000/rooms/join/..."}</p>
 </CopyToClipboard>
         
 

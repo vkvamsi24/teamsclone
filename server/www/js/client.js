@@ -3660,7 +3660,7 @@ function getAbout() {
  * https://sweetalert2.github.io
  */
 function leaveRoom() {
-  window.location.href = "http://teamsclone.netlify.app";
+  window.location.href = "http://localhost:3000";
 }
 
 /**

@@ -248,7 +248,7 @@ function NewGroup({ user, db, firebase }) {
         <span className="lucky-coupon-code"></span>
         
           
-            <CopyToClipboard text={"https://teamsclone.netlify.app/rooms/join/"+result} onCopy={() => {
+            <CopyToClipboard text={"http://localhost:3000/rooms/join/"+result} onCopy={() => {
 
              setCopied(true);
              setTimeout(function() {
@@ -259,7 +259,7 @@ function NewGroup({ user, db, firebase }) {
               
               
               }>
-              <p className="copy-code">{"https://teamsclone.netlify.app/rooms/join/..."}</p>
+              <p className="copy-code">{"http://localhost:3000/rooms/join/..."}</p>
             </CopyToClipboard>
         
 

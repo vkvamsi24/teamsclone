@@ -26,7 +26,7 @@ export default function JoinChat(props) {
   var ids;
 
   const dontWant = () => {
-    window.location = "https://teamsclone.netlify.app";
+    window.location = "http://localhost:3000";
   };
 
 
@@ -143,7 +143,7 @@ export default function JoinChat(props) {
            })
            .then(function () {
             console.log("Document successfully updated!");
-            window.location.href = "https://teamsclone.netlify.app";
+            window.location.href = "http://localhost:3000";
             
           })
           .catch(function (error) {
